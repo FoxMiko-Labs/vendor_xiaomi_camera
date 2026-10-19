@@ -12,7 +12,7 @@ soong_namespace {
 android_app_import {
 	name: "MiuiCamera",
 	owner: "xiaomi",
-	apk: "proprietary/system_ext/priv-app/MiuiCamera/MiuiCamera.apk",
+	apk: "proprietary/system/priv-app/MiuiCamera/MiuiCamera.apk",
 	overrides: ["Snap", "Aperture", "GoogleCameraGo", "Camera2"],
 	certificate: "platform",
 	dex_preopt: {
@@ -24,7 +24,7 @@ android_app_import {
 android_app_import {
 	name: "MiuiScanner",
 	owner: "xiaomi",
-	apk: "proprietary/system_ext/priv-app/MiuiScanner/MiuiScanner.apk",
+	apk: "proprietary/system/priv-app/MiuiScanner/MiuiScanner.apk",
 	certificate: "platform",
 	dex_preopt: {
 		enabled: false,
@@ -35,19 +35,19 @@ android_app_import {
 dex_import {
 	name: "vendor.xiaomi.hardware.misys-V1.0-java",
 	owner: "xiaomi",
-	jars: ["proprietary/system_ext/framework/vendor.xiaomi.hardware.misys-V1.0-java.jar"],
+	jars: ["proprietary/system/framework/vendor.xiaomi.hardware.misys-V1.0-java.jar"],
 }
 
 dex_import {
 	name: "vendor.xiaomi.hardware.misys-V2.0-java",
 	owner: "xiaomi",
-	jars: ["proprietary/system_ext/framework/vendor.xiaomi.hardware.misys-V2.0-java.jar"],
+	jars: ["proprietary/system/framework/vendor.xiaomi.hardware.misys-V2.0-java.jar"],
 }
 
 dex_import {
 	name: "vendor.xiaomi.hardware.misys.V3_0",
 	owner: "xiaomi",
-	jars: ["proprietary/system_ext/framework/vendor.xiaomi.hardware.misys.V3_0.jar"],
+	jars: ["proprietary/system/framework/vendor.xiaomi.hardware.misys.V3_0.jar"],
 }
 
 prebuilt_etc_xml {
@@ -102,7 +102,7 @@ cc_prebuilt_library_shared {
 	},
 	target: {
 		android_arm64: {
-			srcs: ["proprietary/system_ext/lib64/libcamera_algoup_jni.xiaomi.so"],
+			srcs: ["proprietary/system/lib64/libcamera_algoup_jni.xiaomi.so"],
 			shared_libs: [
 				"libvndksupport",
 				"libcamera_client",
@@ -132,7 +132,7 @@ cc_prebuilt_library_shared {
 	},
 	target: {
 		android_arm64: {
-			srcs: ["proprietary/system_ext/lib64/libcamera_mianode_jni.xiaomi.so"],
+			srcs: ["proprietary/system/lib64/libcamera_mianode_jni.xiaomi.so"],
 			shared_libs: [
 				"libvndksupport",
                 "libcamera_client",
@@ -164,7 +164,7 @@ cc_prebuilt_library_shared {
     target: {
         android_arm64: {
             srcs: [
-                "proprietary/system_ext/lib64/libmicampostproc_client.so",
+                "proprietary/system/lib64/libmicampostproc_client.so",
             ],
             shared_libs: [
                 "liblog",
@@ -203,7 +203,7 @@ cc_prebuilt_library_shared {
     target: {
         android_arm64: {
             srcs: [
-                "proprietary/system_ext/lib64/vendor.xiaomi.hardware.campostproc@1.0.so",
+                "proprietary/system/lib64/vendor.xiaomi.hardware.campostproc@1.0.so",
             ],
             shared_libs: [
                 "android.hardware.camera.common@1.0",
@@ -230,7 +230,7 @@ cc_prebuilt_library_shared {
 	},
 	target: {
 		android_arm64: {
-			srcs: ["proprietary/system_ext/lib64/libgui-xiaomi.so"],
+			srcs: ["proprietary/system/lib64/libgui-xiaomi.so"],
 			shared_libs: ["libbinder_shim", "libgralloctypes", "android.hardware.graphics.mapper@4.0", "android.hardware.graphics.common-V5-ndk", "android.hardware.graphics.bufferqueue@1.0", "android.hardware.graphics.bufferqueue@2.0", "android.hardware.graphics.common@1.1", "android.hardware.graphics.common@1.2", "android.hidl.token@1.0-utils", "libbase", "libcutils", "libEGL", "libGLESv2", "libhidlbase", "liblog", "libnativewindow", "libsync", "libui", "libutils", "libvndksupport", "libbinder", "libc++", "libc", "libm", "libdl", ],
 		},
 	},
@@ -246,7 +246,7 @@ cc_prebuilt_library_shared {
 	},
 	target: {
 		android_arm64: {
-			srcs: ["proprietary/system_ext/lib64/android.hardware.graphics.common-V5-ndk.so"],
+			srcs: ["proprietary/system/lib64/android.hardware.graphics.common-V5-ndk.so"],
 			shared_libs: ["libbinder_ndk", "android.hardware.common-V2-ndk", "libc++", "libc", "libm", "libdl", ],
 		},
 	},
@@ -264,12 +264,12 @@ cc_prebuilt_library_shared {
     target: {
         android_arm: {
             srcs: [
-                "proprietary/system_ext/lib/libOpenCL.so",
+                "proprietary/system/lib/libOpenCL.so",
             ],
         },
         android_arm64: {
             srcs: [
-                "proprietary/system_ext/lib64/libOpenCL.so",
+                "proprietary/system/lib64/libOpenCL.so",
             ],
         },
     },
@@ -295,7 +295,7 @@ cc_prebuilt_library_shared {
     target: {
         android_arm64: {
             srcs: [
-                "proprietary/system_ext/lib64/libSNPE.so",
+                "proprietary/system/lib64/libSNPE.so",
             ],
             shared_libs: [
                 "libsymphony-cpu",
@@ -321,7 +321,7 @@ cc_prebuilt_library_shared {
     target: {
         android_arm64: {
             srcs: [
-                "proprietary/system_ext/lib64/libsymphony-cpu.so",
+                "proprietary/system/lib64/libsymphony-cpu.so",
             ],
             shared_libs: [
                 "liblog",
@@ -346,7 +346,7 @@ cc_prebuilt_library_shared {
     target: {
         android_arm64: {
             srcs: [
-                "proprietary/system_ext/lib64/vendor.xiaomi.hardware.misys@1.0.so",
+                "proprietary/system/lib64/vendor.xiaomi.hardware.misys@1.0.so",
             ],
             shared_libs: [
                 "libhidlbase",
@@ -373,7 +373,7 @@ cc_prebuilt_library_shared {
     target: {
         android_arm64: {
             srcs: [
-                "proprietary/system_ext/lib64/vendor.xiaomi.hardware.misys@2.0.so",
+                "proprietary/system/lib64/vendor.xiaomi.hardware.misys@2.0.so",
             ],
             shared_libs: [
                 "vendor.xiaomi.hardware.misys@1.0",
@@ -401,7 +401,7 @@ cc_prebuilt_library_shared {
     target: {
         android_arm64: {
             srcs: [
-                "proprietary/system_ext/lib64/vendor.xiaomi.hardware.misys@3.0.so",
+                "proprietary/system/lib64/vendor.xiaomi.hardware.misys@3.0.so",
             ],
             shared_libs: [
                 "android.hidl.allocator@1.0",
@@ -432,7 +432,7 @@ cc_prebuilt_library_shared {
     target: {
         android_arm64: {
             srcs: [
-                "proprietary/system_ext/lib64/vendor.xiaomi.hardware.misys@4.0.so",
+                "proprietary/system/lib64/vendor.xiaomi.hardware.misys@4.0.so",
             ],
             shared_libs: [
                 "vendor.xiaomi.hardware.misys@1.0",
@@ -462,7 +462,7 @@ cc_prebuilt_library_shared {
     target: {
         android_arm64: {
             srcs: [
-                "proprietary/system_ext/lib64/vendor.xiaomi.hardware.misys@1.0.so",
+                "proprietary/system/lib64/vendor.xiaomi.hardware.misys@1.0.so",
             ],
             shared_libs: [
                 "libhidlbase",
@@ -491,7 +491,7 @@ cc_prebuilt_library_shared {
     target: {
         android_arm64: {
             srcs: [
-                "proprietary/system_ext/lib64/vendor.xiaomi.hardware.misys@2.0.so",
+                "proprietary/system/lib64/vendor.xiaomi.hardware.misys@2.0.so",
             ],
             shared_libs: [
                 "vendor.xiaomi.hardware.misys@1.0",
@@ -521,7 +521,7 @@ cc_prebuilt_library_shared {
     target: {
         android_arm64: {
             srcs: [
-                "proprietary/system_ext/lib64/vendor.xiaomi.hardware.misys@3.0.so",
+                "proprietary/system/lib64/vendor.xiaomi.hardware.misys@3.0.so",
             ],
             shared_libs: [
                 "android.hidl.allocator@1.0",
@@ -554,7 +554,7 @@ cc_prebuilt_library_shared {
     target: {
         android_arm64: {
             srcs: [
-                "proprietary/system_ext/lib64/vendor.xiaomi.hardware.misys@4.0.so",
+                "proprietary/system/lib64/vendor.xiaomi.hardware.misys@4.0.so",
             ],
             shared_libs: [
                 "vendor.xiaomi.hardware.misys@1.0",
@@ -585,7 +585,7 @@ cc_prebuilt_library_shared {
     },
     target: {
         android_arm64: {
-            srcs: ["proprietary/system_ext/lib64/libarcsoft_single_chart_calibration.so"],
+            srcs: ["proprietary/system/lib64/libarcsoft_single_chart_calibration.so"],
             shared_libs: [
                 "liblog",
                 "libz",
@@ -609,7 +609,7 @@ cc_prebuilt_library_shared {
     },
     target: {
         android_arm64: {
-            srcs: ["proprietary/system_ext/lib64/libdoc_photo.so"],
+            srcs: ["proprietary/system/lib64/libdoc_photo.so"],
             shared_libs: [
                 "liblog",
                 "libOpenCL",
@@ -634,7 +634,7 @@ cc_prebuilt_library_shared {
     },
     target: {
         android_arm64: {
-            srcs: ["proprietary/system_ext/lib64/libdoc_photo_c++_shared.so"],
+            srcs: ["proprietary/system/lib64/libdoc_photo_c++_shared.so"],
             shared_libs: [
                 "libc",
                 "libdl",
@@ -654,7 +654,7 @@ cc_prebuilt_library_shared {
     },
     target: {
         android_arm64: {
-            srcs: ["proprietary/system_ext/lib64/libmotion_photo.so"],
+            srcs: ["proprietary/system/lib64/libmotion_photo.so"],
             shared_libs: [
                 "libc++_shared",
                 "liblog",
@@ -679,7 +679,7 @@ cc_prebuilt_library_shared {
     },
     target: {
         android_arm64: {
-            srcs: ["proprietary/system_ext/lib64/libmotion_photo_c++_shared.so"],
+            srcs: ["proprietary/system/lib64/libmotion_photo_c++_shared.so"],
             shared_libs: [
                 "libc",
                 "libdl",
@@ -699,7 +699,7 @@ cc_prebuilt_library_shared {
     },
     target: {
         android_arm64: {
-            srcs: ["proprietary/system_ext/lib64/libmotion_photo_mace.so"],
+            srcs: ["proprietary/system/lib64/libmotion_photo_mace.so"],
             shared_libs: [
                 "libc++_shared",
                 "libm",
@@ -722,7 +722,7 @@ cc_prebuilt_library_shared {
     },
     target: {
         android_arm64: {
-            srcs: ["proprietary/system_ext/lib64/libmisys_jni.so"],
+            srcs: ["proprietary/system/lib64/libmisys_jni.so"],
             shared_libs: [
                 "liblog",
                 "libutils",
