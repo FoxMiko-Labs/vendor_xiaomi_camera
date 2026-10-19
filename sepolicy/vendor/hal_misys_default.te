@@ -1,3 +1,5 @@
+hal_attribute(hal_misys);
+
 type hal_misys_default, domain;
 hal_server_domain(hal_misys_default, hal_misys)
 
