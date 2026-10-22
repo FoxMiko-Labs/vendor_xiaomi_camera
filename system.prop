@@ -5,3 +5,10 @@ ro.miui.build.region=in
 ro.miui.notch=1
 persist.vendor.camera.privapp.list=com.android.camera
 persist.sys.cam.skip_detach_image=true
+# Skip lens dirty detection in the AI ASD node; libcamera_dirty.so crashes
+# with SIGSEGV in DirtyCamera::Forward on photo mode preview.
+persist.vendor.camera.xiaomi.dirty.num=0
+# Scudo compatibility slack for the prebuilt ArcSoft dual-cam/MIA blobs.
+# They read up to 8 bytes past large heap allocations, which faults when the
+# allocation ends exactly on a guard page (targetSdk 33 disables the old slack).
+persist.sys.scudo.large_alloc_slack=1
