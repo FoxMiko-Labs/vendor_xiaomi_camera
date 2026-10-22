@@ -9,10 +9,26 @@ soong_namespace {
 	],
 }
 
+genrule {
+	name: "MiuiCamera_patched_apk",
+	owner: "xiaomi",
+	srcs: [
+		"proprietary/system/priv-app/MiuiCamera/MiuiCamera.apk",
+		"proprietary/system/priv-app/MiuiCamera/patch/classes4.dex",
+	],
+	tool_files: [
+		"tools/patch_miuicamera.py",
+	],
+	out: [
+		"MiuiCamera_patched.apk",
+	],
+	cmd: "python3 $(location tools/patch_miuicamera.py) $(in) $(out)",
+}
+
 android_app_import {
 	name: "MiuiCamera",
 	owner: "xiaomi",
-	apk: "proprietary/system/priv-app/MiuiCamera/MiuiCamera.apk",
+	apk: ":MiuiCamera_patched_apk",
 	overrides: ["Snap", "Aperture", "GoogleCameraGo", "Camera2"],
 	certificate: "platform",
 	dex_preopt: {
